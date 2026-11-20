@@ -2,6 +2,6 @@
 
 int main()
 {
-    printf("Hello GitHub!");
+    printf("Hello GitHub! welcome to the github world ");
     return 0;
 }
