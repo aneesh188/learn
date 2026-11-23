@@ -1,22 +1,22 @@
 #include <stdio.h>
 
-int add(int first, int second)
+int add(int firstNumber, int secondNumber)
 {
-    return first + second;
+    return firstNumber + secondNumber;
 }
 
 int main(void)
 {
-    int first;
-    int second;
+    int firstNumber;
+    int secondNumber;
 
     printf("Enter two numbers: ");
-    if (scanf("%d %d", &first, &second) != 2)
+    if (scanf("%d %d", &firstNumber, &secondNumber) != 2)
     {
         fprintf(stderr, "Please enter two valid integers.\n");
         return 1;
     }
 
-    printf("Sum: %d\n", add(first, second));
+    printf("Sum: %d\n", add(firstNumber, secondNumber));
     return 0;
 }
