@@ -3,43 +3,43 @@
 
 int main(void)
 {
-    char input[100];
-    size_t left;
-    size_t right;
-    int isPalindrome = 1;
+    char text[100];
+    size_t startIndex;
+    size_t endIndex;
+    int palindromeStatus = 1;
 
     printf("Enter a word or number: ");
-    if (scanf("%99s", input) != 1)
+    if (scanf("%99s", text) != 1)
     {
         fprintf(stderr, "Please enter a word or number.\n");
         return 1;
     }
 
-    left = 0;
-    right = strlen(input);
-    if (right > 0)
+    startIndex = 0;
+    endIndex = strlen(text);
+    if (endIndex > 0)
     {
-        right--;
+        endIndex--;
     }
 
-    while (left < right)
+    while (startIndex < endIndex)
     {
-        if (input[left] != input[right])
+        if (text[startIndex] != text[endIndex])
         {
-            isPalindrome = 0;
+            palindromeStatus = 0;
             break;
         }
-        left++;
-        right--;
+        startIndex++;
+        endIndex--;
     }
 
-    if (isPalindrome)
+    if (palindromeStatus)
     {
-        printf("%s is a palindrome.\n", input);
+        printf("%s is a palindrome.\n", text);
     }
     else
     {
-        printf("%s is not a palindrome.\n", input);
+        printf("%s is not a palindrome.\n", text);
     }
 
     return 0;
