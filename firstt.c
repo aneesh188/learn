@@ -10,13 +10,21 @@ int main(void)
     int firstNumber;
     int secondNumber;
 
-    printf("Enter two numbers: ");
-    if (scanf("%d %d", &firstNumber, &secondNumber) != 2)
+    printf("Enter the first number: ");
+    if (scanf("%d", &firstNumber) != 1)
     {
-        fprintf(stderr, "Please enter two valid integers.\n");
+        fprintf(stderr, "Please enter a valid integer.\n");
         return 1;
     }
 
-    printf("Sum: %d\n", add(firstNumber, secondNumber));
+    printf("Enter the second number: ");
+    if (scanf("%d", &secondNumber) != 1)
+    {
+        fprintf(stderr, "Please enter a valid integer.\n");
+        return 1;
+    }
+
+    printf("%d + %d = %d\n", firstNumber, secondNumber,
+           add(firstNumber, secondNumber));
     return 0;
 }
